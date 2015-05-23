@@ -13,8 +13,6 @@ var selectedTee;
 		detectEventClickOrTouch(aboutButton, showAbout);
 		var aboutShade = getId("aboutShade");
 		detectEventClickOrTouch(aboutShade, hideAbout);
-		var closeBanner = getId("closeBanner");
-		detectEventClickOrTouch(closeBanner, hideGamemixBanner);
 		startGame();
 	}
 
@@ -36,15 +34,6 @@ var selectedTee;
 		aboutShade.className = "";
 		aboutContent.className = "";
 	}
-	
-/****************************************
- Hide Gamemix Banner
-****************************************/
-	function hideGamemixBanner()
-	{
-		var gamemixBanner = getId("gamemixBanner");
-		gamemixBanner.className = "hide";
-	}
 
 /****************************************
  Utility Functions
@@ -59,7 +48,7 @@ var selectedTee;
 
 	function isTouchDevice()
 	{
-		return 'ontouchstart' in window // works on most browsers 
+		return 'ontouchstart' in window // works on most browsers
 		|| 'onmsgesturechange' in window; // works on ie10
 	}
 
@@ -106,7 +95,7 @@ var selectedTee;
 			selectTee(holes[i]);
 			detectEventClickOrTouch(holes[i], firstTouch);
 		}
-	
+
 		// Commence animation
 		setTimeout(function()
 		{
@@ -171,15 +160,15 @@ var selectedTee;
 	function touchOption(event)
 	{
 		removeOptions();
-	
+
 		var nowEmpty = getId("hole-" + selectedTee.y + "-" + selectedTee.x);
 		makeEmpty(nowEmpty);
-	
+
 		var middleTee = getMiddleTee(this);
 		makeEmpty(middleTee);
-	
+
 		placeTee(this, selectedTee.color);
-	
+
 		detectEventClickOrTouch(this, touchTee);
 	}
 
@@ -224,13 +213,13 @@ var selectedTee;
 	function selectTee(element)
 	{
 		element.className = element.className + " selected";
-	
+
 		// Get tee coordinates and color
 		var temp = element.id.split("-");
 		var y = parseInt(temp[1]);
 		var x = parseInt(temp[2]);
 		var color = getColor(element);
-	
+
 		// Update selectedTee variable
 		selectedTee = {
 			x:x,
@@ -287,7 +276,7 @@ var selectedTee;
 		else
 			return false;
 	}
-	
+
 	function getMiddleTee(element)
 	{
 		var oldX = selectedTee.x;
@@ -298,7 +287,7 @@ var selectedTee;
 
 		var middleY;
 		var middleX;
-	
+
 		if (oldY > newY) // tee going up
 		{
 			middleY = newY + 1;
@@ -323,7 +312,7 @@ var selectedTee;
 			else // going right
 				middleX = newX - 1;
 		}
-	
+
 		var middleTee = getId("hole-" + middleY + "-" + middleX);
 		return middleTee;
 	}
@@ -333,7 +322,7 @@ var selectedTee;
 		var x = selectedTee.x;
 		var y = selectedTee.y;
 		var color = selectedTee.color;
-	
+
 		var up = y-2;
 		var down = y+2;
 		var left = x-2;
@@ -379,7 +368,7 @@ var selectedTee;
 				if (!hasTee(potentialOption))
 					options.push(potentialOption);
 			}
-		
+
 			// down, right
 			var middleHole = getId("hole-" + (y+1) + "-" + (x+1));
 			if (hasTee(middleHole))
@@ -411,7 +400,6 @@ var selectedTee;
 					options.push(potentialOption);
 			}
 		}
-	
+
 		return options;
 	}
-
