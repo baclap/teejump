@@ -1,0 +1,271 @@
+@media only screen and (min-width : 300px)
+{
+	body{font-size:15px;}
+	#gamemixBanner{bottom:0;}
+}
+
+@media only screen and (min-width : 550px)
+{
+	body{font-size:30px;}
+	#gamemixBanner{top:0;}
+}
+
+body
+{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	line-height:1;
+	background: #e2e2e2;
+	margin:0;
+	padding:0;
+}
+
+#game-wrap
+{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin:-7.5em 0 0 0;
+}
+
+.row
+{
+	text-align:center;
+	margin:0;
+	padding:0;
+	height:3em;
+}
+
+.hole-wrap
+{
+	display:inline-block;
+	margin:0;
+	padding:0;
+	width:3em;
+	height:3em;
+}
+
+.hole
+{
+	width:2em;
+	height:2em;
+	margin:0;
+	padding:1em 0 0 1em;
+	background:0;
+}
+
+.hole div
+{
+	width:1em;
+	height:1em;
+	margin:0;
+	padding:0;
+	background:#ccc;
+	border-radius:1em;
+	box-shadow:0 .75em .5em #333 inset;
+}
+
+.hole.option div {box-shadow:0 .75em .5em #ff0000 inset;}
+
+/* NORMAL */
+
+	.tee
+	{
+		width:2em;
+		height:2em;
+		margin:.3em;
+		padding:.2em;
+		background:#E82C0C;
+		border-radius:2.4em;
+		box-shadow:-.2em .5em .8em #333;
+		-moz-transition: width .2s, height .2s, margin .2s, padding .2s, box-shadow .2s ease-in-out;
+		-webkit-transition: width .2s, height .2s, margin .2s, padding .2s, box-shadow .2s ease-in-out;
+		-o-transition: width .2s, height .2s, margin .2s, padding .2s, box-shadow .2s ease-in-out;
+		transition: width .2s, height .2s, margin .2s, padding .2s, box-shadow .2s ease-in-out;
+	}
+
+		.tee.blue, .tee.blue div {background:#4146BE;}
+		.tee.orange, .tee.orange div {background:#FF530D;}
+		.tee.yellow, .tee.yellow div {background:#E8DC07;}
+
+	.tee div
+	{
+		width:2em;
+		height:2em;
+		border-radius:2em;
+		-moz-transition: width .2s, height .2s, margin .2s, padding .2s, box-shadow .2s ease-in-out;
+		-webkit-transition: width .2s, height .2s, margin .2s, padding .2s, box-shadow .2s ease-in-out;
+		-o-transition: width .2s, height .2s, margin .2s, padding .2s, box-shadow .2s ease-in-out;
+		transition: width .2s, height .2s, margin .2s, padding .2s, box-shadow .2s ease-in-out;
+	}
+
+		.tee.blue div {box-shadow:0 0 .8em #161740 inset;}
+		.tee.orange div {box-shadow:0 0 .8em #7F2906 inset;}
+		.tee.yellow div {box-shadow:0 0 .8em #7F7904 inset;}
+
+/* SELECTED */
+
+	.tee.selected
+	{
+		/*box-shadow:0 0 5px 5px #1B51B5;*/
+		width:2.6em;
+		height:2.6em;
+		margin:0;
+		box-shadow:-.3em .8em .8em #333;
+	}
+
+	.tee.selected div
+	{
+		width:2.6em;
+		height:2.6em;
+	}
+
+		.tee.selected.blue div {box-shadow:0 0 1.2em #161740 inset;}
+		.tee.selected.orange div {box-shadow:0 0 1.2em #7F2906 inset;}
+		.tee.selected.yellow div {box-shadow:0 0 1.2em #7F7904 inset;}
+
+/* BUTTONS */
+
+	.button
+	{
+		margin:0;
+		padding:2.5em 0;
+		font-size:1em;
+		font-family:sans-serif;
+		background:#686868;
+		color:#e2e2e2;
+		border:0;
+		width:6em;
+		height:1em;
+		text-align:center;
+		border-radius:3em;
+		z-index:25;
+	}
+	
+	.button:active
+	{
+		background:#464646;
+	}
+
+	#restartButton
+	{
+		position:absolute;
+		top:1em;
+		left:1em;
+	}
+	
+	#aboutButton
+	{
+		position:absolute;
+		top:1em;
+		right:1em;
+	}
+	
+/* ABOUT */
+
+	#aboutShade
+	{
+		position:absolute;
+		z-index:100;
+		top:0;
+		right:0;
+		left:0;
+		bottom:0;
+		background:#000000;
+		opacity:.3;
+		display:none;
+	}
+	
+	#aboutContent
+	{
+		line-height:1;
+		font-family:sans-serif;
+		color:#fefefe;
+		position:absolute;
+		width:10em;
+		padding:1em;
+		position:absolute;
+		z-index:200;
+		top:50%;
+		left:50%;
+		margin:-5em 0 0 -6em;
+		background:#191919;
+		box-shadow:-.125em .125em .5em #191919;
+		display:none;
+	}
+	
+	#aboutContent h1
+	{
+		font-size:1.5em;
+		margin:0 0 .5em 0;
+		text-align:center;
+		font-weight:bold;
+	}
+	
+	#aboutContent p
+	{
+		margin:0;
+		font-size:.75em;
+		text-align:center;
+	}
+	
+	#aboutContent a
+	{
+		color:#FF530D;
+		text-decoration:none;
+	}
+	
+	#aboutContent a:active
+	{
+		color:#4146BE;
+	}
+	
+	#aboutShade.show, #aboutContent.show
+	{
+		display:block;
+	}
+	
+/* GAMEMIX BANNER */
+
+	#gamemixBanner
+	{
+		position:absolute;
+		left:50%;
+		margin:0 0 0 -160px;
+		width:320px;
+		height:50px;
+		z-index:0;
+		border:1px solid #686868;
+	}
+	
+	#gamemixBanner.hide
+	{
+		display:none;
+	}
+	
+	#closeBanner
+	{
+		position:absolute;
+		top:0;
+		right:0;
+		background:#686868;
+		color:#e2e2e2;
+		width:25px;
+		height:13px;
+		text-align:center;
+		padding:6px 0;
+		margin:0;
+		font-family:sans-serif;
+		font-size:13px;
+		line-height:1;
+	}
+	
+	#closeBanner:active
+	{
+		background:#464646;
+	}

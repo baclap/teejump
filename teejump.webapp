@@ -1,0 +1,14 @@
+{
+	"name": "Tee Jump",
+	"description": "Inspired by the puzzle game found at Cracker Barrel restaurants.",
+	"launch_path": "/",
+	"icons": {
+		"128": "/icon_one-tee_128_round.png"
+	},
+	"developer": {
+		"name": "Brett Clapper",
+		"url": "http://brettclapper.com"
+	},
+	"default_locale": "en",
+	"orientation": ["portrait"]
+}
